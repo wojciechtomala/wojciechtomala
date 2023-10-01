@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Simple calculator</h1>
+    <form action="/Home/Calculator" method="post">
+        <input type="number" name="num1" />
+        <input type="number" name="num2" />
+        <select name="operation">
+            <option value="addition">+</option>
+            <option value="subtraction">-</option>
+            <option value="division">/</option>
+            <option value="multiplication">*</option>
+        </select>
+        <input type="submit" value="="/>
+    </form>
+    <div>
+        @if (ViewBag.Result != null)
+        {
+            <p>Wynik: @ViewBag.Result</p>
+        }
+        @if (ViewBag.Error != null)
+        {
+            <p>@ViewBag.Error</p>
+        }
+    </div>
+</div>
